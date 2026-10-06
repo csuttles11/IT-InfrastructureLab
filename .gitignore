@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# SQLite database
+monitoring/data/*.db
+
+# Environment / secrets
+.env
+.env.*
+
+# macOS
+.DS_Store
+
+# Docker
+*.log
