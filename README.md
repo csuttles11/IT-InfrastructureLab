@@ -1,33 +1,41 @@
 # IT Infrastructure & Systems Administration Lab
 
-A self-contained IT operations and systems administration lab built to simulate
-a small organization's infrastructure.
+A containerized IT infrastructure lab designed to simulate a small organization's
+servers, database, monitoring system, and incident management workflow.
 
-## Objectives
+The project demonstrates practical infrastructure and systems administration
+skills including Docker, networking, service monitoring, REST APIs, databases,
+automation, troubleshooting, and incident response.
 
-- Monitor infrastructure services
-- Perform automated health checks
-- Track service availability
-- Detect simulated outages
-- Generate and track incidents
-- Analyze system logs
-- Practice troubleshooting workflows
-- Expose REST API endpoints for infrastructure status
-- Document system administration procedures
+## Architecture
 
-## Technologies
-
-- Linux
-- Docker
-- Python
-- Flask
-- SQLite
-- SQL
-- Bash
-- REST APIs
-- Git
-
-## Infrastructure
-
-The lab will contain multiple simulated infrastructure services monitored
-through a centralized IT operations dashboard.
+```text
+                    IT Infrastructure Lab
+                            |
+                     Docker Network
+                            |
+       +--------------------+--------------------+
+       |                    |                    |
+       v                    v                    v
+    Nginx               Flask API           PostgreSQL
+    Web Server           App Server          Database
+       :80                  :5000                :5432
+       |                    |                    |
+       +--------------------+--------------------+
+                            |
+                            v
+                     Monitoring Service
+                            |
+                 HTTP + TCP Health Checks
+                            |
+                            v
+                     Incident Database
+                        SQLite
+                            ^
+                            |
+                            |
+                    Monitoring API
+                         :5000
+                            |
+                            v
+                    REST API :5002
